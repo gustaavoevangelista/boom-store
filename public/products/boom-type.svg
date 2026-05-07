@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title">
+  <title id="title">BOOM typography print</title>
+  <rect width="900" height="1100" fill="#fff"/>
+  <rect x="95" y="95" width="710" height="910" fill="#FFB6C1" stroke="#111" stroke-width="18"/>
+  <text x="450" y="410" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="180" fill="#FE210E" stroke="#fff" stroke-width="8">BOOM</text>
+  <text x="450" y="570" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="108" fill="#111">TYPE</text>
+  <circle cx="255" cy="720" r="54" fill="#FE210E"/>
+  <circle cx="450" cy="720" r="54" fill="#111"/>
+  <circle cx="645" cy="720" r="54" fill="#FE210E"/>
+</svg>

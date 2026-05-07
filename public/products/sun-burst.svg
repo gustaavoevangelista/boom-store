@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title">
+  <title id="title">Sun Burst BOOM t-shirt mockup</title>
+  <rect width="900" height="1100" fill="#FFB6C1"/>
+  <path d="M290 190h320l70 120v590H220V310z" fill="#fff"/>
+  <path d="M330 190c20 70 220 70 240 0" fill="none" stroke="#111" stroke-width="16"/>
+  <circle cx="450" cy="535" r="155" fill="#FE210E"/>
+  <path d="M450 310v450M225 535h450M290 375l320 320M610 375 290 695" stroke="#fff" stroke-width="30"/>
+  <text x="450" y="955" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="72" fill="#111">BOOM</text>
+</svg>

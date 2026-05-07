@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BOOM T-Shirteria
 
-## Getting Started
+Multilingual storefront for BOOM T-Shirteria, built with Next.js App Router, TypeScript, Tailwind CSS, shadcn-style UI primitives, Biome, and dark mode.
 
-First, run the development server:
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Biome for linting and formatting
+- `next-themes` for light/dark mode
+- Radix UI primitives styled in the shadcn/ui style
+
+## Scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Routes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `/pt`, `/en`, `/es`
+- `/[locale]/shop`
+- `/[locale]/collections/t-shirts`
+- `/[locale]/collections/prints`
+- `/[locale]/product/[slug]`
+- `/[locale]/cart`
+- `/[locale]/favorites`
+- `/[locale]/checkout`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Stripe is intentionally not connected yet. The checkout page is a shell for the future payment flow.

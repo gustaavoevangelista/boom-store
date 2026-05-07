@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title">
+  <title id="title">Loud Heart BOOM t-shirt mockup</title>
+  <rect width="900" height="1100" fill="#111"/>
+  <path d="M290 190h320l70 120v590H220V310z" fill="#FFB6C1"/>
+  <path d="M330 190c20 70 220 70 240 0" fill="none" stroke="#fff" stroke-width="16"/>
+  <path d="M450 670s-170-95-170-225c0-80 95-125 170-45 75-80 170-35 170 45 0 130-170 225-170 225z" fill="#FE210E"/>
+  <text x="450" y="805" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="88" fill="#fff">LOUD</text>
+</svg>
