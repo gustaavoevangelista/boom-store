@@ -1,10 +1,14 @@
-import { ContentPage } from "@/components/content-page";
+import { ContentPage } from "@/components/shared/content-page";
+import { dictionaries, isLocale } from "@/config/i18n";
 
-export default function CookiesPage() {
+export default async function CookiesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return null;
+  const dictionary = dictionaries[locale];
   return (
     <ContentPage
-      title="Cookies"
-      body="Add cookie and analytics policy details when tracking tools are selected."
+      title={dictionary.pages.cookies.title}
+      sections={dictionary.pages.cookies.sections}
     />
   );
 }

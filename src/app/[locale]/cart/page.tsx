@@ -1,5 +1,5 @@
-import { CartPageClient } from "@/components/cart-page-client";
-import { dictionaries, isLocale } from "@/lib/i18n";
+import { CartPageClient } from "@/components/cart/cart-page-client";
+import { dictionaries, isLocale } from "@/config/i18n";
 
 export default async function CartPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

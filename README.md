@@ -1,6 +1,6 @@
 # BOOM T-Shirteria
 
-Multilingual storefront for BOOM T-Shirteria, built with Next.js App Router, TypeScript, Tailwind CSS, shadcn-style UI primitives, Biome, and dark mode.
+Multilingual storefront for BOOM T-Shirteria, built with Next.js App Router, TypeScript, Tailwind CSS, shadcn-style UI primitives, Biome, and theme support.
 
 ## Stack
 
@@ -9,7 +9,7 @@ Multilingual storefront for BOOM T-Shirteria, built with Next.js App Router, Typ
 - TypeScript
 - Tailwind CSS 4
 - Biome for linting and formatting
-- `next-themes` for light/dark mode
+- Local theme provider
 - Radix UI primitives styled in the shadcn/ui style
 
 ## Scripts

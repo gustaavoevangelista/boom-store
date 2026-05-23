@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 export const Sheet = SheetPrimitive.Root;
 export const SheetTrigger = SheetPrimitive.Trigger;
 export const SheetClose = SheetPrimitive.Close;
+export const SheetTitle = SheetPrimitive.Title;
+export const SheetDescription = SheetPrimitive.Description;
 
 export function SheetContent({
   className,
@@ -30,7 +32,7 @@ export function SheetContent({
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="absolute right-4 top-4 rounded-md opacity-70 hover:opacity-100">
+        <SheetPrimitive.Close className="absolute right-4 top-4 cursor-pointer rounded-md opacity-70 hover:opacity-100">
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>

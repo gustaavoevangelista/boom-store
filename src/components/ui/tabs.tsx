@@ -24,7 +24,7 @@ export function TabsTrigger({
   return (
     <TabsPrimitive.Trigger
       className={cn(
-        "rounded px-3 py-1.5 text-sm font-medium data-[state=active]:bg-background",
+        "cursor-pointer rounded px-3 py-1.5 text-sm font-medium data-[state=active]:bg-background",
         className,
       )}
       {...props}

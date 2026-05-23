@@ -1,10 +1,11 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
-import type { CartLine } from "@/lib/cart";
-import { getCartTotal } from "@/lib/cart";
-import type { Locale } from "@/lib/i18n";
+import type { Locale } from "@/config/i18n";
+import { getCartTotal, validateCart } from "@/services/cart";
+import type { CartLine } from "@/types/cart";
 
 type CartContextValue = {
   lines: CartLine[];
@@ -18,26 +19,40 @@ type CartContextValue = {
   clearCart: () => void;
 };
 
-const CartContext = createContext<CartContextValue | undefined>(undefined);
+export const CartContext = createContext<CartContextValue | undefined>(undefined);
 
-export function CartProvider({ children, locale }: { children: React.ReactNode; locale: Locale }) {
+function readStoredJson<T>(key: string): T | undefined {
+  const raw = window.localStorage.getItem(key);
+  if (!raw) return undefined;
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    return undefined;
+  }
+}
+
+export function CartProvider({ children, locale }: { children: ReactNode; locale: Locale }) {
   const [lines, setLines] = useState<CartLine[]>([]);
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    const storedCart = window.localStorage.getItem("boom-cart");
-    const storedFavorites = window.localStorage.getItem("boom-favorites");
-    if (storedCart) setLines(JSON.parse(storedCart));
-    if (storedFavorites) setFavorites(JSON.parse(storedFavorites));
+    const storedCart = readStoredJson<CartLine[]>("boom-cart");
+    const storedFavorites = readStoredJson<string[]>("boom-favorites");
+    if (storedCart !== undefined) setLines(validateCart(storedCart));
+    if (storedFavorites !== undefined) setFavorites(storedFavorites);
+    setHydrated(true);
   }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     window.localStorage.setItem("boom-cart", JSON.stringify(lines));
-  }, [lines]);
+  }, [hydrated, lines]);
 
   useEffect(() => {
+    if (!hydrated) return;
     window.localStorage.setItem("boom-favorites", JSON.stringify(favorites));
-  }, [favorites]);
+  }, [favorites, hydrated]);
 
   const value = useMemo<CartContextValue>(
     () => ({
@@ -86,10 +101,4 @@ export function CartProvider({ children, locale }: { children: React.ReactNode; 
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
-}
-
-export function useCart() {
-  const context = useContext(CartContext);
-  if (!context) throw new Error("useCart must be used within CartProvider");
-  return context;
 }

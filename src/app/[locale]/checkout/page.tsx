@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { dictionaries, isLocale } from "@/lib/i18n";
+import { dictionaries, isLocale } from "@/config/i18n";
 
 export default async function CheckoutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

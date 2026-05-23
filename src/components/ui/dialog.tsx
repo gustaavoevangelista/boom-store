@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 export const Dialog = DialogPrimitive.Root;
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogClose = DialogPrimitive.Close;
+export const DialogTitle = DialogPrimitive.Title;
+export const DialogDescription = DialogPrimitive.Description;
 
 export function DialogContent({
   className,
@@ -24,7 +26,7 @@ export function DialogContent({
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-md opacity-70 hover:opacity-100">
+        <DialogPrimitive.Close className="absolute right-4 top-4 cursor-pointer rounded-md opacity-70 hover:opacity-100">
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>

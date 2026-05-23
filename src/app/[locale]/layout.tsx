@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { Providers } from "@/components/providers";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { dictionaries, isLocale } from "@/lib/i18n";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { Providers } from "@/components/store/providers";
+import { dictionaries, isLocale } from "@/config/i18n";
 
 export function generateStaticParams() {
   return [{ locale: "pt" }, { locale: "en" }, { locale: "es" }];

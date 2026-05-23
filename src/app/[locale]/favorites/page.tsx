@@ -1,5 +1,5 @@
-import { FavoritesClient } from "@/components/favorites-client";
-import { dictionaries, isLocale } from "@/lib/i18n";
+import { FavoritesClient } from "@/components/favorites/favorites-client";
+import { dictionaries, isLocale } from "@/config/i18n";
 
 export default async function FavoritesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

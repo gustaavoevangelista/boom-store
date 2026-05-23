@@ -17,7 +17,7 @@ export function AccordionTrigger({
     <AccordionPrimitive.Header>
       <AccordionPrimitive.Trigger
         className={cn(
-          "flex w-full items-center justify-between py-4 text-left font-semibold",
+          "flex w-full cursor-pointer items-center justify-between py-4 text-left font-semibold",
           className,
         )}
         {...props}

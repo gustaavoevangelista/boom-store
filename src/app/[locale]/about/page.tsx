@@ -1,10 +1,11 @@
-import { ContentPage } from "@/components/content-page";
+import { ContentPage } from "@/components/shared/content-page";
+import { dictionaries, isLocale } from "@/config/i18n";
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return null;
+  const dictionary = dictionaries[locale];
   return (
-    <ContentPage
-      title="About BOOM"
-      body="BOOM T-Shirteria creates graphic t-shirts and prints with a loud, playful visual identity. Final brand copy can be added before launch."
-    />
+    <ContentPage title={dictionary.pages.about.title} sections={dictionary.pages.about.sections} />
   );
 }

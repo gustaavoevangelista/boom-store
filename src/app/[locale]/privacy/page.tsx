@@ -1,10 +1,14 @@
-import { ContentPage } from "@/components/content-page";
+import { ContentPage } from "@/components/shared/content-page";
+import { dictionaries, isLocale } from "@/config/i18n";
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return null;
+  const dictionary = dictionaries[locale];
   return (
     <ContentPage
-      title="Privacy Policy"
-      body="Replace this placeholder with GDPR-ready privacy copy covering analytics, contact forms, checkout providers, and retention."
+      title={dictionary.pages.privacy.title}
+      sections={dictionary.pages.privacy.sections}
     />
   );
 }

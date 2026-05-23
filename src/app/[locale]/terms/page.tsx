@@ -1,10 +1,11 @@
-import { ContentPage } from "@/components/content-page";
+import { ContentPage } from "@/components/shared/content-page";
+import { dictionaries, isLocale } from "@/config/i18n";
 
-export default function TermsPage() {
+export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return null;
+  const dictionary = dictionaries[locale];
   return (
-    <ContentPage
-      title="Terms"
-      body="Replace this placeholder with final business terms, seller identity, payment, shipping, and consumer rights details."
-    />
+    <ContentPage title={dictionary.pages.terms.title} sections={dictionary.pages.terms.sections} />
   );
 }
